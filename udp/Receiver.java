@@ -8,10 +8,10 @@ public class Receiver {
 
 	public static void main(String[] args) throws IOException 
 	{
-		//Opens a datagram socket on the specified port
+		
 		DatagramSocket socket = new DatagramSocket(RECEIVE_PORT);
 		
-		//Constructs a datagram packet for receiving the packets of specified length
+		
 		byte[] buf = new byte[1024];
 		DatagramPacket packet = new DatagramPacket(buf, 1024);
 		//Receives a datagram packet from this socket
@@ -20,7 +20,8 @@ public class Receiver {
 		String msg = new String(packet.getData(), 0, packet.getLength());
 		System.out.println("Receiver, ho ricevuto il seguente messaggio "+ msg);
 		
-		//Closing the Datagram socket
+		
 		socket.close();
 	}
+
 }
