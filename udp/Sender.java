@@ -10,10 +10,10 @@ public class Sender {
 
 	public static void main(String[] args) throws IOException 
 	{	
-		//Create Datagram socket that binds to any available port in localhost
+		
 		DatagramSocket socket = new DatagramSocket();
 
-		//Create Datagram packet and send
+		
 		String message = "Hello Message using UDP";
 		System.out.println("Sender: starting on port " + DEST_PORT);
 		InetAddress destIpAddr = InetAddress.getByName(DEST_IP);
@@ -21,7 +21,8 @@ public class Sender {
 		socket.send(sendPacket);
 		System.out.println("Sender: ho inviato il messaggio " + message);
 		
-		//Close the socket
+		
 		socket.close();
 	}
+
 }
