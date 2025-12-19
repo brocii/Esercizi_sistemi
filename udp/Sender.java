@@ -13,8 +13,10 @@ public class Sender {
 		
 		DatagramSocket socket = new DatagramSocket();
 
-		
-		String message = "Hello Message using UDP";
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("scrivi il messaggio da inviare");
+		String message = scanner.nextLine();
+		scanner.close();
 		System.out.println("Sender: starting on port " + DEST_PORT);
 		InetAddress destIpAddr = InetAddress.getByName(DEST_IP);
 		DatagramPacket sendPacket = new DatagramPacket(message.getBytes(), message.length(), destIpAddr, DEST_PORT);
@@ -26,3 +28,4 @@ public class Sender {
 	}
 
 }
+
